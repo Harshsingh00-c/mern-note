@@ -1,29 +1,53 @@
+# NoteKeeper
 
-## 🧪 .env Setup
+A lightweight note-taking app built with React, Vite, Express, and Node.js. Notes are stored in a local JSON file so they persist without needing a database.
 
-### Backend (`/backend`)
+## Features
 
-```
-MONGO_URI=<your_mongo_uri>
+- Create, edit, and delete notes
+- Fast local API backed by Express
+- Persistent note storage in a JSON file
+- Clean React interface for managing notes
 
-UPSTASH_REDIS_REST_URL=<your_redis_rest_url>
-UPSTASH_REDIS_REST_TOKEN=<your_redis_rest_token>
+## Project structure
 
-NODE_ENV=development
-```
+- frontend/: React frontend with Vite
+- backend/: Express API and file-based storage
+- backend/data/notes.json: note data file
 
-## 🔧 Run the Backend
+## Installation
 
-```
-cd backend
+```bash
+cd /workspaces/mern-note
 npm install
+npm --prefix backend install
+npm --prefix frontend install
+```
+
+## Run the app
+
+```bash
+cd /workspaces/mern-note
 npm run dev
 ```
 
-## 💻 Run the Frontend
+Then open:
 
-```
-cd frontend
-npm install
-npm run dev
-```
+- Frontend: http://localhost:5173/
+- Backend API: http://localhost:5001
+
+## API endpoints
+
+- GET /api/health
+- GET /api/notes
+- POST /api/notes
+- PUT /api/notes/:id
+- DELETE /api/notes/:id
+
+## Data persistence
+
+Notes are saved in:
+
+- backend/data/notes.json
+
+The file is updated whenever a note is created, edited, or deleted.
